@@ -1,0 +1,47 @@
+<template name="host">
+    <div class="container">
+        <div class="widget-header">
+            <h3>Hosts</h3>
+        </div>
+        <div class="widget-content">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>IP</th>
+                        <th>CPU</th>
+                        <th>RAM</th>
+                        <th>Status</th>
+                        <th>Events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each hosts}}
+                    <tr>
+                        <td>{{this.alias}}</td>
+                        <td>{{this.ip}}</td>
+                        <td>
+                            {{#each this.pings}}
+                                {{ this.loadavg.[1] }}
+                            {{/each}}
+                        </td>
+                        <td>
+                            {{#each this.pings}}
+                                Total {{ this.mem.[1] }} MB
+                                Used {{ this.mem.[2] }} MB
+                                Free {{ this.mem.[3] }} MB
+                            {{/each}}
+                        </td>
+                        <td>All systems are go!</td>
+                        <td>Event%</td>
+                    </tr>
+
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#each pings}}
+        *
+        {{/each}}
+    </div>
+</template>

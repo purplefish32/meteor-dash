@@ -3,6 +3,7 @@
     "bootstrap-3": {},
     "iron-router": {},
     "reactive-table": {},
-    "streams": {}
+    "streams": {},
+    "font-awesome": {}
   }
 }

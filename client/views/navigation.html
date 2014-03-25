@@ -1,0 +1,23 @@
+<template name="navigation">
+    <div class="top-navbar navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="./">Server Dash</a>
+            </div>
+        </div>
+    </div>
+    <div class="subnavbar">
+        <div class="subnavbar-inner">
+            <div class="container nav-collapse">
+                <ul class="mainnav">
+                    <li>
+                        <a href="{{ pathFor 'dashboard'}}"><i class="icon-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ pathFor 'host'}}"><i class="icon-list-alt"></i><span>Hosts</span></a>
+                    </li>
+                </ul>
+            </div><!-- /container -->
+        </div><!-- /subnavbar-inner -->
+    </div><!-- /subnavbar -->
+</template>

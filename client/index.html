@@ -1,0 +1,20 @@
+<head>
+  <title>Server Dash</title>
+</head>
+
+<body>
+    {{> navigation }}
+</body>
+
+<template name='overlay'>
+  {{#if overlay}}
+    <div id='overlay' class='overlay'>
+      <div class='cover'></div>
+      <div id='panel' class='panel wrapper'>
+        {{#if login}}
+          {{>login}}
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+</template>
