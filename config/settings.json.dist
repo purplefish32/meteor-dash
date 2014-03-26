@@ -1,0 +1,11 @@
+{
+    "public" : {
+        "hosts" : [
+            {
+                "id": "",
+                "alias": "",
+                "linuxDashURL" : ""
+            }
+        ]
+    }
+}
