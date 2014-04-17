@@ -2,8 +2,8 @@
   "packages": {
     "bootstrap-3": {},
     "iron-router": {},
-    "reactive-table": {},
     "streams": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "spin": {}
   }
 }

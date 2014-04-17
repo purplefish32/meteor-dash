@@ -1,7 +1,8 @@
 <template name="host">
     <div class="container">
+        <h1>Hosts</h1>
         <div class="widget-header">
-            <h3>Hosts</h3>
+            <h3>Host list</h3>
         </div>
         <div class="widget-content">
             <table class="table table-bordered table-condensed">
@@ -17,25 +18,27 @@
                 </thead>
                 <tbody>
                     {{#each hosts}}
-                    <tr>
-                        <td>{{this.alias}}</td>
-                        <td>{{this.ip}}</td>
-                        <td>
-                            {{#each this.pings}}
-                                {{ this.loadavg.[1] }}
-                            {{/each}}
-                        </td>
-                        <td>
-                            {{#each this.pings}}
-                                Total {{ this.mem.[1] }} MB
-                                Used {{ this.mem.[2] }} MB
-                                Free {{ this.mem.[3] }} MB
-                            {{/each}}
-                        </td>
-                        <td>All systems are go!</td>
-                        <td>Event%</td>
-                    </tr>
-
+                        {{this.id}}
+                        {{#each this.pings}}
+                        +
+                            <tr>
+                                <td>{{this.localhostname}}</td>
+                                <td>{{this.ip}}</td>
+                                <td>
+                                    {{#each this.pings}}
+                                        {{ this.loadavg.[1] }}
+                                    {{/each}}
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Uptime {{secondsToString this.uptime}}</li>
+                                        <li>Memory {{ bytesToSize this.mem }}</li>
+                                    </ul>
+                                </td>
+                                <td>All systems are go!</td>
+                                <td>Event%</td>
+                            </tr>
+                        {{/each}}
                     {{/each}}
                 </tbody>
             </table>

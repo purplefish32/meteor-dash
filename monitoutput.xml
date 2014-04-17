@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monit>
+    <server>
+        <id>bf87f1ad2bc58ddf941c45095c6c3135</id>
+        <incarnation>1396775593</incarnation>
+        <version>5.1.1</version>
+        <uptime>154</uptime>
+        <poll>5</poll>
+        <startdelay>0</startdelay>
+        <localhostname>X61</localhostname>
+        <controlfile>/etc/monit/monitrc</controlfile>
+        <httpd>
+            <address></address>
+            <port>2812</port>
+            <ssl>0</ssl>
+        </httpd>
+    </server>
+    <platform>
+        <name>Linux</name>
+        <release>3.2.0-0.bpo.4-486</release>
+        <version>#1 Debian 3.2.54-2~bpo60+1</version>
+        <machine>i686</machine>
+        <cpu>1</cpu>
+        <memory>3089612</memory>
+    </platform>
+    <service type="5">
+        <collected_sec>1396775744</collected_sec>
+        <collected_usec>779337</collected_usec>
+        <name>X61</name>
+        <status>0</status>
+        <status_hint>0</status_hint>
+        <monitor>1</monitor>
+        <monitormode>0</monitormode>
+        <pendingaction>0</pendingaction>
+        <groups></groups>
+        <system>
+            <load>
+                <avg01>0.72</avg01>
+                <avg05>0.56</avg05>
+                <avg15>0.45</avg15>
+            </load>
+            <cpu>
+                <user>13.0</user>
+                <system>5.9</system>
+                <wait>0.7</wait>
+            </cpu>
+            <memory>
+                <percent>24.3</percent>
+                <kilobyte>752456</kilobyte>
+            </memory>
+        </system>
+    </service>
+</monit>

@@ -4,17 +4,16 @@
 # but you can also edit it by hand.
 
 insecure
-preserve-inputs
 less
 standard-app-packages
 bootstrap-3
 iron-router
 just-i18n
-reactive-table
 accounts-base
 accounts-password
 streams
 jquery
 http
 font-awesome
+spin
 autopublish
