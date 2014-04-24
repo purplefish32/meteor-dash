@@ -24,16 +24,14 @@ Router.map(function(){
       attributes = body["@attributes"];
       platform = body.platform;
       console.log("Server ID : " + attributes.id);
-      console.log("Server Hostnamt: " + server.localhostname);
-      // console.log("Server Up Time : " + server.uptime);
-      // console.log("Platform Name : " + platform.name);
-      // console.log("Platform Release : " + platform.release);
-      // console.log("Platform Version : " + platform.version);
-      // console.log("Platform Machine : " + platform.machine);
-      // console.log("Platform CPU : " + platform.cpu);
-      // console.log("Platform Memory : " + platform.memory);
-      //
-      console.log('hi\n');
+      console.log("Server Hostenamt: " + server.localhostname);
+      console.log("Server Up Time : " + server.uptime);
+      console.log("Platform Name : " + platform.name);
+      console.log("Platform Release : " + platform.release);
+      console.log("Platform Version : " + platform.version);
+      console.log("Platform Machine : " + platform.machine);
+      console.log("Platform CPU : " + platform.cpu);
+      console.log("Platform Memory : " + platform.memory);
 
       //if not find id in hosts, add id to hosts
       var id = Hosts.findOne({id: server.id});
