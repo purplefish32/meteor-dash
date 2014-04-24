@@ -20,11 +20,11 @@ Router.map(function(){
     where: 'server',
     action: function() {
       body = this.request.body;
-      console.log(this.request);
       server = body.server;
+      attributes = body.@attributes;
       platform = body.platform;
-      // console.log("Server ID : " + server.id);
-      // console.log("Server Hostnamt: " + server.localhostname);
+      console.log("Server ID : " + attributes.id);
+      console.log("Server Hostnamt: " + server.localhostname);
       // console.log("Server Up Time : " + server.uptime);
       // console.log("Platform Name : " + platform.name);
       // console.log("Platform Release : " + platform.release);
