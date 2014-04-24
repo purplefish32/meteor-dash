@@ -21,7 +21,7 @@ Router.map(function(){
     action: function() {
       body = this.request.body;
       server = body.server;
-      attributes = body.@attributes;
+      attributes = body["@attributes"];
       platform = body.platform;
       console.log("Server ID : " + attributes.id);
       console.log("Server Hostnamt: " + server.localhostname);
