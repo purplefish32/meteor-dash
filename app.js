@@ -20,6 +20,7 @@ Router.map(function(){
     where: 'server',
     action: function() {
       body = this.request.body;
+      console.log(body);
       server = body.server;
       platform = body.platform;
       // console.log("Server ID : " + server.id);
