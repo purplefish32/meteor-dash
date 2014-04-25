@@ -21,17 +21,20 @@ Router.map(function(){
     action: function() {
       body = this.request.body;
       server = body.server;
-      attributes = body["@attributes"];
+      //attributes = body["@attributes"];
       platform = body.platform;
-      console.log("Server ID : " + attributes.id);
-      console.log("Server Hostenamt: " + server.localhostname);
+      service = body.service;
+      console.log("Server ID : " + server.id);
+      console.log("Server Hostename: " + server.localhostname);
       console.log("Server Up Time : " + server.uptime);
       console.log("Platform Name : " + platform.name);
       console.log("Platform Release : " + platform.release);
       console.log("Platform Version : " + platform.version);
       console.log("Platform Machine : " + platform.machine);
       console.log("Platform CPU : " + platform.cpu);
-      console.log("Platform Memory : " + platform.memory);
+      console.log("Platform Memory Total : " + platform.memory);
+      console.log("Platform Memory % used : " + service.system.memory.percent);
+      console.log("Platform Memory used : " + service.system.memory.kilobyte);
 
       //if not find id in hosts, add id to hosts
       var id = Hosts.findOne({id: server.id});
@@ -46,11 +49,12 @@ Router.map(function(){
           id: server.id,
           servername: server.localhostname,
           uptime: server.uptime,
-          mem: platform.memory,
+          memTotal: platform.memory,
+          memPercentUsed: service.system.memory.percent,
+          memKilobyteUsed: service.system.memory.kilobyte,
           cpu: platform.cpu,
           timestamp: new Date().getTime()
       });
-
 
       //messageStream.emit('message', JSON.stringify(server));
     }

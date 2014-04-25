@@ -8,43 +8,31 @@
             <table class="table table-bordered table-condensed">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Host</th>
-                        <th>IP</th>
                         <th>CPU</th>
-                        <th>RAM</th>
-                        <th>Status</th>
-                        <th>Events</th>
+                        <th>Total Memory</th>
+                        <th>Memory - Percent used</th>
+                        <th>Memory used</th>
+                        <th>Uptime</th>
+                        <th>Timestamp</th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each hosts}}
-                        {{this.id}}
-                        {{#each this.pings}}
-                        +
-                            <tr>
-                                <td>{{this.localhostname}}</td>
-                                <td>{{this.ip}}</td>
-                                <td>
-                                    {{#each this.pings}}
-                                        {{ this.loadavg.[1] }}
-                                    {{/each}}
-                                </td>
-                                <td>
-                                    <ul>
-                                        <li>Uptime {{secondsToString this.uptime}}</li>
-                                        <li>Memory {{ bytesToSize this.mem }}</li>
-                                    </ul>
-                                </td>
-                                <td>All systems are go!</td>
-                                <td>Event%</td>
-                            </tr>
-                        {{/each}}
+                        <tr>
+                            <td>{{this.id}}</td>
+                            <td>{{this.lastPing.servername}}</td>
+                            <td>{{this.lastPing.cpu}}</td>
+                            <td>{{killoBytesToSize this.lastPing.mem}}</td>
+                            <td>{{this.lastPing.memPercentUsed}} %</td>
+                            <td>{{killoBytesToSize this.lastPing.memKilobyteUsed}}</td>
+                            <td>{{secondsToString this.lastPing.uptime}}</td>
+                            <td>{{this.lastPing.timestamp}}</td>
+                        </tr>
                     {{/each}}
                 </tbody>
             </table>
         </div>
-        {{#each pings}}
-        *
-        {{/each}}
     </div>
 </template>

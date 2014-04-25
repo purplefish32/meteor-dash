@@ -8,12 +8,10 @@ less
 standard-app-packages
 bootstrap-3
 iron-router
-just-i18n
 accounts-base
 accounts-password
 streams
 jquery
 http
-font-awesome
 spin
 autopublish

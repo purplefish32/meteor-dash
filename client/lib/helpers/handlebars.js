@@ -12,9 +12,9 @@ Handlebars.registerHelper('secondsToString', function(seconds) {
     return numyears + " years " +  numdays + " days " + numhours + " hours " + numminutes + " minutes " + numseconds + " seconds";
 });
 
-Handlebars.registerHelper('bytesToSize', function(bytes) {
+Handlebars.registerHelper('killoBytesToSize', function(bytes) {
    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
    if (bytes == 0) return '0 Bytes';
    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i+1];
 });
